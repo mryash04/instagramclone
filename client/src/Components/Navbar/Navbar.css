@@ -1,0 +1,80 @@
+.navbar{
+    display : flex;
+    justify-content : space-evenly;
+    align-items : center;
+    background-color : #ffffff;
+    height : 60px;
+    border-bottom : 1px solid #dbdbdb;
+}
+
+.navbar-logo img{
+    display : flex;
+    align-items : center;
+}
+
+.navbar-search{
+    display : flex;
+    align-items : center;
+    position : relative;
+}
+
+.navbar-search span{
+    font-size : 10px;
+    color : #808080;
+    position : absolute;
+    left : 10px;
+}
+
+.navbar-search input{
+    width : 250px;
+    padding : 10px;
+    border : 1px solid #808080;
+    border-radius : 2px;
+    background-color :#fafafa;
+    opacity : 0.5;
+}
+
+.navbar-search input:focus{
+    border : 1px solid #000000;
+}
+
+.navbar-search input::placeholder{
+    padding-left : 15px;
+}
+
+.navbar-icons{
+    display : flex;
+    align-items : center;
+    cursor : pointer;
+}
+
+.navbar-icons .navbar-icon{
+    padding-left : 20px;
+}
+
+.navbar-icon span img{
+    width : 22px;
+    height : 22px;
+}
+
+.navbar-icon span .profile{
+    border-radius : 100px;
+    width : 30px;
+    height : 30px;
+}
+
+.close-modal{
+    position : absolute;
+    right : 20px;
+    top : 70px;
+}
+
+.close-modal button{
+    border : none;
+    background-color : #000000;
+    color : #ffffff;
+    padding : 10px;
+    font-size : 20px;
+    cursor : pointer;
+    border-radius : 5px;
+}

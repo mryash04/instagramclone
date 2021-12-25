@@ -1,0 +1,41 @@
+.postmodal-data{
+    width : 500px;
+    height : 500px;
+}
+
+.postmodal-title span{
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    font-size : 15px;
+    font-weight : 500;
+    padding : 10px;
+}
+
+.postmodal-image-upload-area{
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    gap : 15px;
+    height : 60vh;
+}
+
+.postmodal-image-upload-title span{
+    font-size : 20px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.postmodal-image-upload{
+    border: 1px solid transparent;
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color : #4d96f6;
+    color : #ffffff;
+    border-radius : 5px;
+    font-size : 15px;
+}
