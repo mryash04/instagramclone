@@ -1,0 +1,73 @@
+.suggestion{
+    width : 400px;
+    height : auto;
+    background-color : #ffffff;
+    border : 1px solid #dbdbdb;
+    padding : 10px;
+    border-radius : 2px;
+}
+
+.suggestion-data{
+    display : flex;
+    justify-content : space-between;
+    align-items : center;
+    width : 100%;
+    margin-top : 10px;
+}
+
+.suggestion-users-data{
+    display : flex;
+    align-items : center;
+    gap : 10px;
+}
+
+.suggestion-users-data img{
+    width : 60px;
+    height : 60px;
+    border-radius : 50px;
+    border : 2px solid #808080;
+    padding : 2px;
+    cursor : pointer;
+}
+
+.suggestion-users-name{
+    display : flex;
+    flex-direction : column;
+}
+
+.suggestion-users-name .user-name{
+    font-size : 15px;
+    font-weight : bold;
+    cursor : pointer;
+}
+
+.suggestion-users-name .name{
+    font-size : 15px;
+    color : #808080;
+    cursor : pointer;
+}
+
+.suggestion-btn a{
+    font-size : 13px;
+    text-decoration : none;
+    color : #4d96f6;
+    font-weight : 600;
+}
+
+.suggestion-for-you{
+    display : flex;
+    justify-content : space-between;
+    margin-top : 20px;
+    font-size : 15px;
+}
+
+.suggestion-for-you :nth-child(1){
+    font-weight : bold;
+    cursor : pointer;
+    color : #808080;
+}
+
+.suggestion-for-you :nth-child(2){
+    font-weight : 500;
+    cursor : pointer;
+}

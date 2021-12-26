@@ -1,0 +1,123 @@
+.posts{
+    width : 600px;
+    height : auto;
+    background-color : #ffffff;
+    border : 1px solid #dbdbdb;
+    margin : 10px auto;
+    display : flex;
+    flex-direction : column;
+    border-radius : 2px;
+}
+
+.posts-info{
+    display : flex;
+    justify-content : space-between;
+    align-items : center;
+    padding : 10px;
+}
+
+.posts-info .posts-user-info{
+    display : flex;
+    align-items : center;
+    gap : 10px;
+}
+
+.posts-user-info img{
+    width : 30px;
+    height : 30px;
+    border-radius : 50px;
+    border : 2px solid red;
+    padding : 2px;
+    cursor : pointer;
+}
+
+.posts-user-info span{
+    font-size : 13px;
+    cursor : pointer;
+}
+
+.posts-info .posts-options{
+    display : flex;
+    align-items : center;
+    font-size : 20px;
+    font-weight : bold;
+    padding-bottom : 10px;
+    cursor : pointer;
+}
+
+.posts-user-image img{
+    width : 598px;
+    height : auto;
+    object-fit : contain;
+}
+
+.posts-action{
+    display : flex;
+    justify-content : space-between;
+    align-items : center;
+    padding : 10px;
+}
+
+.posts-action img{
+    width : 25px;
+    height : 25px;
+    cursor : pointer;
+}
+
+.posts-action .posts-user-action{
+    display : flex;
+    align-items : center;
+    gap : 15px;
+    color : #000000;
+}
+
+.posts-action .posts-save img{
+    display : flex;
+    align-items : center;
+    color : #000000;
+}
+
+.posts .posts-likes{
+    font-size : 15px;
+    font-weight : 600;
+    padding : 10px;
+    color : #636363;
+    cursor : pointer;
+}
+
+.posts-comment-area{
+    display : flex;
+    justify-content : space-between;
+    align-items : center;
+    padding : 10px;
+}
+
+.posts-comment-area .posts-user-comment{
+    display : flex;
+    align-items : center;
+    gap : 10px;
+}
+
+.posts-user-comment span{
+    font-size : 30px;
+    cursor : pointer;
+}
+
+.posts-user-comment input{
+    border : none;
+    outline : none;
+    padding-left : 10px;
+}
+
+.posts-user-btn button{
+    display : flex;
+    align-items : center;
+    border : none;
+    outline : none;
+    padding : 0;
+    font-size : 15px;
+    color : #4d96f6;
+    font-weight : 500;
+    opacity : 0.5;
+    cursor : pointer;
+}
