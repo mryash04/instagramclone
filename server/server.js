@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const connectDB = require("./config/db");
 const Users = require("./models/Users");
+const cors = require("cors");
 const PORT = 8000;
 
 connectDB();
@@ -9,6 +10,8 @@ connectDB();
 console.log(Users);
 
 app.use(express.json());
+
+app.use(cors());
 
 app.get("/", (req, res) =>{
     res.send("This is from home side");

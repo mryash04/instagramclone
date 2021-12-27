@@ -1,0 +1,260 @@
+.signup{
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    height : 100%;
+    /* overflow-y : scroll; */
+}
+
+.root{
+    height:100%;
+}
+  
+a, a:visited {
+    text-decoration: none;
+}
+
+a:active, .btn:active {
+    opacity:.5;
+}
+  
+ol, ul {
+    list-style: none;
+}
+  
+.root, article, main, section, header, nav, footer {
+    border: 0 solid #000000;
+    box-sizing: border-box; 
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin:0;
+    padding:0;
+    position: relative;
+}
+  
+  
+.root {
+    z-index: 0;
+}
+  
+.section-all {
+    min-height:100%;
+    overflow:hidden;
+}
+  
+.main {
+    background-color: #fafafa;
+    order: 4;
+    flex-grow: 1;
+}
+  
+.wrapper {
+    min-height:100%;
+    overflow: hidden;
+}
+  
+.wrapper, .article {
+    flex-grow: 1;
+    justify-content: center;
+}
+  
+.article {
+    flex-direction: row;
+    margin:0 auto;
+    max-width: 935px;
+    width:100%;
+}
+  
+.content {
+    color:#262626;
+    flex-grow:1;
+    justify-content: center;
+    max-width: 350px;
+    margin-top:12px;
+}
+  
+.login-box {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+    margin:0 0 10px;
+    padding: 10px 0;
+}
+  
+.login-box .header {
+    margin: 14.45px auto 12px;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+}
+  
+.header .logo {
+    background: cover no-repeat;
+    width:175px;
+    height:auto;
+}
+  
+.form {
+    display: flex;
+    flex-direction: column;
+    gap : 5px;
+    margin-bottom: 10px;
+}
+  
+.input-box {
+    margin:auto 40px 6px;
+}
+  
+.input-box input {
+    height: 36px;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    background-color: #fafafa;
+    width:100%;
+    font-size:12px;
+    margin: 0;
+    padding: 9px 0 7px 8px;
+    outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+}
+
+input#name:focus, input#password:focus {
+    border-color:#bbb;
+}
+  
+.button-box {
+    display: block;
+    position: relative;
+    margin: 8px 40px;
+}
+
+.btn {
+    cursor: pointer;
+    width: 100%;
+    padding:0 8px; 
+    background: #3897f0;
+    border:1px solid #3897f0;
+    color:#fff;
+    border-radius:3px;
+    font-weight:600;
+    font-size: 14px;
+    height: 28px;
+    line-height: 26px;
+    outline: none;
+    white-space: nowrap;
+}
+  
+.forgot, .forgot:active, .forgot:hover, .forgot:visited {
+    font-size:12px;
+    margin-top:12px;
+    text-align: center;
+    color:#003569;
+    line-height: 14px!important;
+}
+  
+.text {
+    text-align:center;
+    margin:15px;
+    color:#262626;
+    font-size:14px;
+}
+  
+.text a, .text a:visited, .text a:hover, .text a:active {
+    color:#3897f0;
+    margin-left:3px;
+}
+
+.app p {
+    line-height: 18px;
+    color:#262626;
+    font-size:14px;
+    text-align:center;
+    margin:10px 20px;
+}
+  
+.app-img {
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    margin:10px 0;
+}
+  
+.app-img a {
+    margin-right:8px;
+    height: 43.5px;
+}
+  
+.app-img img {
+    height:40px;
+}
+
+.footer {
+    background-color: #fafafa;
+    order: 5;
+    padding: 0 20px;
+    background: #fafafa;
+}
+  
+.footer-container {
+    flex-direction: row;  
+    flex-wrap:wrap;
+    background-color: #fafafa;
+    justify-content: space-between;
+    padding: 38px 0;
+    max-width:935px;
+    font-size:12px;
+    font-weight:600;
+    margin:0 auto;
+    text-transform:uppercase;
+    width:100%
+}
+  
+.footer-nav {
+    max-width:100%;
+}
+  
+.footer-nav ul {
+    margin-right:16px;
+    margin-bottom:3px;
+    flex-grow:1;
+}
+  
+.footer-nav ul li {
+    display: inline-block;
+    margin-right: 13px;
+    margin-bottom:7px;
+}
+  
+.footer-nav ul li a {
+    color: #003569;
+    text-decoration: none;
+}
+  
+.footer span {
+    color:#999;
+}
+  
+span.language { 
+    color: #003569;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    position: relative;
+    text-transform: uppercase;
+    vertical-align: top;
+}
+  
+.select {
+    cursor: pointer;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    position: absolute;
+    left:0;
+    width: 100%;
+}

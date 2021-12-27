@@ -5,6 +5,7 @@ import Profile from "../../assets/profile.jpg";
 import Instagram from "../../assets/instagram.png"
 import "../Navbar/Navbar.css";
 import PostModal from "../../Modal/PostModal";
+import {Link} from "react-router-dom";
 
 const Navbar = () => {
 
@@ -21,7 +22,9 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="navbar-logo">
-                <img src={Instagram} alt="instagram" />
+                <Link to="/">
+                    <img src={Instagram} alt="instagram" />
+                </Link>
             </div>
             <div className="navbar-search">
                 <span><i class="fa fa-search"></i></span>

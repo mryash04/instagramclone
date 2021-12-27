@@ -110,6 +110,7 @@
 }
 
 .posts-user-btn button{
+    all : unset;
     display : flex;
     align-items : center;
     border : none;
