@@ -71,6 +71,10 @@ const Navbar = () => {
                     </span>
                 </div>
             </div>
+            <div className="navbar-icon" style={{display : "flex", alignItems : "center", gap : "10px", fontSize : "20px"}}>
+                <Link to="/signup" style={{color : "#000000"}}>Signup</Link>
+                <Link to="/login" style={{color : "#000000"}}>Login</Link>
+            </div>
             <div className="close-modal">
                 {modalIsOpen ? <button onClick={closeModal}>x</button> : null}
             </div>

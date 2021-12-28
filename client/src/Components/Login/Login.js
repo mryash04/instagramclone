@@ -34,7 +34,8 @@ const Login = () => {
             });
 
             const result = await response.json();
-            console.log("This is result", result);
+            console.log("This is result", result.token);
+            localStorage.setItem("jwt", result.token);
             alert("Login Succesfully");
             history.push("/");
         }catch(err){
