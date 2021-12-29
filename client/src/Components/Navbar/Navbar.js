@@ -1,33 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import Heart from "../../assets/heart.png";
 import Plus from "../../assets/more.png";
 import Profile from "../../assets/profile.jpg";
-import Instagram from "../../assets/instagram.png"
+import Instagram from "../../assets/instagram.png";
 import "../Navbar/Navbar.css";
 import PostModal from "../../Modal/PostModal";
 import {Link} from "react-router-dom";
+import {UserContext} from "../../Context/UserContext";
 
 const Navbar = () => {
 
-    const [modalIsOpen, setIsOpen] = useState(false);
+    const {state, dispatch} = useContext(UserContext);
 
-    function openModal() {
-        setIsOpen(true);
-    };
+    console.log("This is also a state", state);
 
-    function closeModal() {
-        setIsOpen(false);
-    }
-
-    return (
-        <div className="navbar">
-            <div className="navbar-logo">
-                <Link to="/">
-                    <img src={Instagram} alt="instagram" />
-                </Link>
-            </div>
+    const renderList = () =>{
+        if(state){
+            return(
+                <React.Fragment>
             <div className="navbar-search">
-                <span><i class="fa fa-search"></i></span>
+                <span><i className="fa fa-search"></i></span>
                 <input type="text" placeholder="Search" />
             </div>
             <div className="navbar-icons">
@@ -41,7 +33,7 @@ const Navbar = () => {
                 <div className="navbar-icon">
                     <span>
                     <svg color="#262626" fill="#262626" height="22" role="img" viewBox="0 0 48 48" width="22">
-							<path clip-rule="evenodd" d="M24 0C10.8 0 0 10.8 0 24s10.8 24 24 24 24-10.8 24-24S37.2 0 24 0zm0 45C12.4 45 3 35.6 3 24S12.4 3 24 3s21 9.4 21 21-9.4 21-21 21zm10.2-33.2l-14.8 7c-.3.1-.6.4-.7.7l-7 14.8c-.3.6-.2 1.3.3 1.7.3.3.7.4 1.1.4.2 0 .4 0 .6-.1l14.8-7c.3-.1.6-.4.7-.7l7-14.8c.3-.6.2-1.3-.3-1.7-.4-.5-1.1-.6-1.7-.3zm-7.4 15l-5.5-5.5 10.5-5-5 10.5z" fill-rule="evenodd"></path>
+							<path clipRule="evenodd" d="M24 0C10.8 0 0 10.8 0 24s10.8 24 24 24 24-10.8 24-24S37.2 0 24 0zm0 45C12.4 45 3 35.6 3 24S12.4 3 24 3s21 9.4 21 21-9.4 21-21 21zm10.2-33.2l-14.8 7c-.3.1-.6.4-.7.7l-7 14.8c-.3.6-.2 1.3.3 1.7.3.3.7.4 1.1.4.2 0 .4 0 .6-.1l14.8-7c.3-.1.6-.4.7-.7l7-14.8c.3-.6.2-1.3-.3-1.7-.4-.5-1.1-.6-1.7-.3zm-7.4 15l-5.5-5.5 10.5-5-5 10.5z" fillRule="evenodd"></path>
 					</svg>
                     </span>
                 </div>
@@ -71,10 +63,38 @@ const Navbar = () => {
                     </span>
                 </div>
             </div>
+                </React.Fragment>
+            )
+        }else{
+            return(
+                <React.Fragment>
             <div className="navbar-icon" style={{display : "flex", alignItems : "center", gap : "10px", fontSize : "20px"}}>
                 <Link to="/signup" style={{color : "#000000"}}>Signup</Link>
                 <Link to="/login" style={{color : "#000000"}}>Login</Link>
             </div>
+                </React.Fragment>
+            )
+        }
+    };
+
+    const [modalIsOpen, setIsOpen] = useState(false);
+
+    function openModal() {
+        setIsOpen(true);
+    };
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
+    return (
+        <div className="navbar">
+            <div className="navbar-logo">
+                <Link to="/">
+                    <img src={Instagram} alt="instagram" />
+                </Link>
+            </div>
+            {renderList()}
             <div className="close-modal">
                 {modalIsOpen ? <button onClick={closeModal}>x</button> : null}
             </div>

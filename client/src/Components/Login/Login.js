@@ -1,7 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {Link, useHistory} from "react-router-dom";
+import {UserContext} from "../../Context/UserContext";
 
 const Login = () => {
+
+  const {state, dispatch} = useContext(UserContext);
 
     let history = useHistory();
 
@@ -36,12 +39,14 @@ const Login = () => {
             const result = await response.json();
             console.log("This is result", result.token);
             localStorage.setItem("jwt", result.token);
+            dispatch({type : "USER", payload : result.token})
             alert("Login Succesfully");
             history.push("/");
-        }catch(err){
+          }catch(err){
             console.log(err);
-        }
-    };
+          }
+        };
+        console.log("This is new state", state)
 
     return (
         <div classNameName="signup">
@@ -59,11 +64,11 @@ const Login = () => {
                   <form className="form">
 
                     <div className="input-box">
-                      <input onChange={handleChange} type="email" id="name" aria-describedby="" placeholder="Email" aria-required="true" maxlength="30" autocapitalize="off" autocorrect="off" name="email" value={email} required />
+                      <input onChange={handleChange} type="email" id="name" placeholder="Email"  name="email" value={email} required />
                     </div> 
 
                     <div className="input-box">
-                      <input onChange={handleChange} type="password" name="password" id="password" placeholder="Password" aria-describedby="" maxlength="30" aria-required="true" autocapitalize="off" autocorrect="off" value={password} required />
+                      <input onChange={handleChange} type="password" name="password" id="password" placeholder="Password"    value={password} required />
                     </div>  
 
                     <span className="button-box">
@@ -110,7 +115,7 @@ const Login = () => {
               <li><a href="">Directory</a></li>
               <li>
                 <span className="language">Language
-                  <select name="language" className="select" onchange="la(this.value)">
+                  <select name="language" className="select" >
                     <option value="#">English</option>
                     <option value="http://ru-instafollow.bitballoon.com">Russian</option>
                   </select>

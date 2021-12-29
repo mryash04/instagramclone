@@ -115,7 +115,7 @@ const Signup = () => {
               <li><a href="">Directory</a></li>
               <li>
                 <span className="language">Language
-                  <select name="language" className="select" onchange="la(this.value)">
+                  <select name="language" className="select">
                     <option value="#">English</option>
                     <option value="http://ru-instafollow.bitballoon.com">Russian</option>
                   </select>

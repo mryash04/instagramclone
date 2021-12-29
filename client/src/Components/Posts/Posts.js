@@ -38,7 +38,7 @@ const Posts = () => {
             <span className="posts-likes">100 likes</span> <hr />
             <div className="posts-comment-area">
                 <div className="posts-user-comment">
-                    <span><i class="fa fa-smile-o"></i></span>
+                    <span><i className="fa fa-smile-o"></i></span>
                     <input type="text" placeholder="Add a comment..." />
                 </div>
                 <div className="posts-user-btn">
