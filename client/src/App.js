@@ -7,6 +7,7 @@ import Signup from "./Components/Signup/Signup";
 import Login from "./Components/Login/Login";
 import {UserContext} from "./Context/UserContext";
 import {initialState, userReducer} from "./reducers/userReducer";
+import Currency from "./Components/Crrency/Currency";
 
 const Routing = ({state, dispatch}) =>{
   let history = useHistory();
@@ -44,6 +45,7 @@ function App() {
       <Router>
         <Navbar />
         <Routing state={state} dispatch={dispatch} />
+        {/* <Currency /> */}
       </Router>
     </div>
     </UserContext.Provider>
