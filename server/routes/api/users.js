@@ -3,8 +3,15 @@ const router = express.Router();
 const User = require("../../models/Users");
 var bcrypt = require('bcryptjs');
 
-router.get("/", (req, res) =>{
-    res.send("This is from home side");
+router.get("/", async(req, res) =>{
+    try{
+        let user = await User.find();
+
+        res.status(200).json({user});
+    }catch(err){
+        console.log(err.message);
+        res.status(400).send("Server Error");
+    }
 });
 
 router.post("/", async(req, res) =>{

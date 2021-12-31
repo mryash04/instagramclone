@@ -5,14 +5,23 @@ import Profile from "../../assets/profile.jpg";
 import Instagram from "../../assets/instagram.png";
 import "../Navbar/Navbar.css";
 import PostModal from "../../Modal/PostModal";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import {UserContext} from "../../Context/UserContext";
 
 const Navbar = () => {
 
+    let history = useHistory();
+
     const {state, dispatch} = useContext(UserContext);
 
     console.log("This is also a state", state);
+
+    const logOut = (event) =>{
+        event.preventDefault();
+        console.log("Clicked");
+        localStorage.clear();
+        history.push("/login");
+    };
 
     const renderList = () =>{
         if(state){
@@ -61,6 +70,9 @@ const Navbar = () => {
                     <span>
                         <img src={Profile} alt="plus" className="profile" />
                     </span>
+                </div>
+                <div className="logout-btn" style={{display : "flex", alignItems : "center", marginLeft : "20px"}}>
+                    <button onClick={logOut} style={{border : "none", padding : "5px", cursor : "pointer", backgroundColor : "red", color : "#ffffff", borderRadius : "2px"}}>Log Out</button>
                 </div>
             </div>
                 </React.Fragment>
