@@ -30,13 +30,13 @@ router.post("/", async(req, res) =>{
         let user = await User.findOne({email : email});
 
         if(!user){
-            return res.status(400).send("User doesn't exists");
+            return res.status(400).send({message:"User doesn't exists", success:false});
         };
 
         const isMatch = await bcrypt.compare(password, user.password)
 
         if(!(user && isMatch)){
-            return res.status(400).send("Inavlid Credential");
+            return res.status(400).send({message:"Inavlid Credential", success:false});
         };
 
         const payload = {
@@ -49,7 +49,7 @@ router.post("/", async(req, res) =>{
 
         const token = await jwt.sign(payload, "Yash Agarwal", { expiresIn: 3600000 });
 
-        res.status(200).json({token});
+        res.status(200).json({token, success : true});
     }catch(err){
         console.log(err.message);
         res.status(400).send("Server Error");

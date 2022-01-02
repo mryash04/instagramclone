@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Modal from 'react-modal';
 import Drag from "../assets/drag.png";
+import { API_URL } from '../helper';
 import "./PostModal.css";
 
 const customStyles = {
@@ -21,8 +22,31 @@ const PostModal = ({modalIsOpen, setIsOpen}) => {
     const[title, setTitle] = useState("");
     const[body, setBody] = useState("");
     const[image, setImage] = useState("");
+    const[url, setUrl] = useState("");
 
     console.log("This is file", image);
+
+    useEffect(() => {
+        if(url){
+            fetch(`${API_URL}/post/createPost`, {
+                method : "POST",
+                headers : {
+                    "Content-Type" : "application/json",
+                    "x-auth-token" : localStorage.getItem("jwt")
+                },
+                body : JSON.stringify({
+                    title,
+                    body,
+                    image : url
+                })
+            }).then((response) => response.json())
+            .then((result) => console.log(result))
+            .catch((err) => console.log(err.mesaage))
+        }
+        setTitle("");
+        setBody("");
+        setImage("");
+    }, [url]);
 
     let subtitle;
   
@@ -44,7 +68,19 @@ const PostModal = ({modalIsOpen, setIsOpen}) => {
         data.append("file", image);
         data.append("upload_preset", "insta-clone");
         data.append("cloud_name", "yashhhh");
-    }
+               fetch("https://api.cloudinary.com/v1_1/yashhhh/image/upload",{
+               method:"post",
+               body:data
+           })
+           .then(res=>res.json())
+           .then(data=>{
+            setUrl(data.url)
+            console.log(data);
+           })
+           .catch(err=>{
+               console.log(err)
+           })
+    };
 
     return (
         <div className="postmodal">
@@ -59,6 +95,9 @@ const PostModal = ({modalIsOpen, setIsOpen}) => {
                 <div className="postmodal-data">
                 <div className="postmodal-title">
                     <span>Create new post</span>
+                </div>
+                <div className="postmodal-share">
+                    <button onClick={postDetails}>Share</button>
                 </div> <hr />
                 <form>
                 <div className="postmodal-info">

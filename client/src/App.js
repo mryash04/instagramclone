@@ -45,9 +45,9 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        {/* <Routing state={state} dispatch={dispatch} /> */}
+        <Routing state={state} dispatch={dispatch} />
         {/* <Currency /> */}
-        <Profile />
+        {/* <Profile /> */}
       </Router>
     </div>
     </UserContext.Provider>

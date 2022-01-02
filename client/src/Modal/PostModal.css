@@ -12,6 +12,20 @@
     padding : 10px;
 }
 
+.postmodal-share button{
+    all : unset;
+    display : flex;
+    justify-content : flex-end;
+    width : 100%;
+    position : absolute;
+    top : 10px;
+    right : 20px;
+    font-size : 15px;
+    font-weight : bold;
+    color : #4d96f6;
+    cursor : pointer;
+}
+
 .postmodal-data form{
     display : flex;
     flex-direction : column;

@@ -42,7 +42,7 @@ router.post("/createPost", auth, async(req, res) =>{
 
     await post.save();
     console.log("This is user", req.user.user);
-    res.status(200).json({post});
+    res.status(200).json({post, success : true});
 });
 
 router.post("/upload/file", async(req, res) =>{

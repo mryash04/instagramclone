@@ -37,11 +37,14 @@ const Login = () => {
             });
 
             const result = await response.json();
-            console.log("This is result", result.token);
-            localStorage.setItem("jwt", result.token);
-            dispatch({type : "USER", payload : result.token})
-            alert("Login Succesfully");
-            history.push("/");
+            if(result.success){
+              localStorage.setItem("jwt", result.token);
+              dispatch({type : "USER", payload : result.token})
+              alert("Login Succesfully");
+              history.push("/");
+            }else{
+               alert("User doesn't exists");
+            }
           }catch(err){
             console.log(err);
           }
