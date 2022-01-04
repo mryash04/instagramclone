@@ -1,8 +1,8 @@
 .suggestion{
     width : 400px;
     height : auto;
-    background-color : #ffffff;
-    border : 1px solid #dbdbdb;
+    /* background-color : #ffffff;
+    border : 1px solid #dbdbdb; */
     padding : 10px;
     border-radius : 2px;
 }

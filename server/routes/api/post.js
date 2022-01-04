@@ -18,14 +18,14 @@ router.get("/allpost", async(req, res) =>{
 
 //create a post
 router.post("/createPost", auth, async(req, res) =>{
-    const{title, body} = req.body;
+    const{title, caption} = req.body;
     const{image} = req.body;
 
     console.log("This is body data", req.body);
 
     console.log("This is image", image);
 
-    if(!(title && body && image)){
+    if(!(caption && image)){
         return res.status(400).send("Please fill the details properly");
     }
 
@@ -35,7 +35,7 @@ router.post("/createPost", auth, async(req, res) =>{
 
     let post = new Post({
         title,
-        body,
+        caption,
         image,
         postedBy : user
     });
@@ -83,13 +83,36 @@ router.get("/post/:id", async(req, res) =>{
     }
 });
 
+router.put("/like/:id", auth, async(req, res) =>{
+    console.log("This is like id", req.user.user.id);
+    try{
+        const like = await Post.findByIdAndUpdate({_id : req.params.id}, {$push:{likes:req.user.user.id}}, {$new : true});
+        res.status(200).json({message : "like", like});
+    }catch(err){
+        console.log(err.message);
+        res.status(400).send("Server Error");
+    }
+});
+
+router.put("/dislike/:id", auth, async(req, res) =>{
+    console.log("This is like id", req.user.user.id);
+    try{
+        const dislike = await Post.findByIdAndUpdate({_id : req.params.id}, {$pull:{likes:req.user.user.id}}, {$new : true});
+        res.status(200).json({message : "like", dislike});
+    }catch(err){
+        console.log(err.message);
+        res.status(400).send("Server Error");
+    }
+});
+
 // delete single post by id
 router.delete("/post/:id", async(req, res) =>{
     try{
-        const id =req.params.id
+        const id = req.params.id;
+        console.log("This is id", id);
         let post = await Post.findByIdAndDelete(id)
 
-        res.status(200).json({success:true,message:"deleted SuccessFully"});
+        res.status(200).json({success:true,message:"deleted SuccessFully", post});
     }catch(err){
         console.log(err.mesaage);
         res.status(400).send("Server Error");

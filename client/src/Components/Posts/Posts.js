@@ -46,10 +46,9 @@ const Posts = () => {
                 </div>
             </div> */}
             <div className="posts-profile">
-            <PostData Profile={Profile}
-            name = "Yash Agarwal"
+            <PostData 
             /> <hr />
-            <PostData Profile={Picone}
+            {/* <PostData Profile={Picone}
             name = "Mark"
             />
             <PostData Profile={Pictwo}
@@ -57,7 +56,7 @@ const Posts = () => {
             />
             <PostData Profile={Picthird}
             name = "Twita"
-            />
+            /> */}
             </div>
         </div>
     )

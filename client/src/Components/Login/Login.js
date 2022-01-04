@@ -37,8 +37,10 @@ const Login = () => {
             });
 
             const result = await response.json();
+            console.log("This is result", result);
             if(result.success){
               localStorage.setItem("jwt", result.token);
+              localStorage.setItem("user", result.id);
               dispatch({type : "USER", payload : result.token})
               alert("Login Succesfully");
               history.push("/");

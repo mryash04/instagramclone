@@ -7,21 +7,25 @@ import "../Navbar/Navbar.css";
 import PostModal from "../../Modal/PostModal";
 import {Link, useHistory} from "react-router-dom";
 import {UserContext} from "../../Context/UserContext";
+import Popover from "../../Popover/Popover";
 
 const Navbar = () => {
 
     let history = useHistory();
 
+    const[image, setImage] = useState("");
+    const [show, setShow] = useState(false);
+    const[showPopOver, setShowPopOver] = useState(false);
+
     const {state, dispatch} = useContext(UserContext);
 
     console.log("This is also a state", state);
 
-    const logOut = (event) =>{
-        event.preventDefault();
+    const openPopOver = () =>{
         console.log("Clicked");
-        localStorage.clear();
-        history.push("/login");
-    };
+        setShowPopOver(!showPopOver)
+        // setShowPopOver(true);
+    }
 
     const renderList = () =>{
         if(state){
@@ -63,17 +67,19 @@ const Navbar = () => {
                         <img src={Plus} onClick={openModal} alt="plus" className="plus" />
                         <PostModal modalIsOpen={modalIsOpen}
                         setIsOpen={setIsOpen}
+                        image={image}
+                        setImage={setImage}
+                        show={show}
+                        setShow={setShow}
                         />
                     </span>
                 </div>
                 <div className="navbar-icon">
-                    <span>
-                        <img src={Profile} alt="plus" className="profile" />
+                    <span onClick={openPopOver}>
+                        <img src={Profile} alt="plus" className="user-profile"/>
                     </span>
                 </div>
-                <div className="logout-btn" style={{display : "flex", alignItems : "center", marginLeft : "20px"}}>
-                    <button onClick={logOut} style={{border : "none", padding : "5px", cursor : "pointer", backgroundColor : "red", color : "#ffffff", borderRadius : "2px"}}>Log Out</button>
-                </div>
+                {showPopOver ? <Popover /> : null}
             </div>
                 </React.Fragment>
             )
@@ -97,7 +103,9 @@ const Navbar = () => {
 
     function closeModal() {
         setIsOpen(false);
-    }
+        setImage("");
+        setShow(false);
+    };
 
     return (
         <div className="navbar">

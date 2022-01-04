@@ -1,0 +1,34 @@
+.profile-options{
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    margin-top : 10px;
+}
+
+.profile-options ul{
+    margin : 0;
+    padding : 0;
+    list-style-type : none;
+}
+
+.profile-options-data{
+    display : flex;
+    gap : 10px;
+}
+
+.profile-options-data li{
+    display : flex;
+    align-items : center;
+    gap : 5px;
+    padding-left : 30px;
+    cursor : pointer;
+    color : #8e8e8e;
+}
+
+.profile-options-data li:active{
+    color : #000000;
+}
+
+.profile-options-data li .profile-options-text{
+    font-size : 14px;
+}

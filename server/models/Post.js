@@ -3,10 +3,9 @@ const mongoose = require("mongoose");
 const postSchema = new mongoose.Schema({
     title : {
         type : String,
-        required : true
     },
 
-    body : {
+    caption : {
         type : String,
         required : true
     },
@@ -15,6 +14,8 @@ const postSchema = new mongoose.Schema({
         type : String,
         // default : "No Photo"
     },
+
+    likes : [{type : mongoose.Schema.Types.ObjectId, ref : "user"}],
 
     postedBy : {
         type : mongoose.Schema.Types.ObjectId,

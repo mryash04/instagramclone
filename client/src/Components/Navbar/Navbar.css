@@ -67,6 +67,12 @@
     height : 30px;
 }
 
+.user-profile{
+    width : 22px;
+    height : 22px;
+    border-radius : 100px;
+}
+
 .close-modal{
     position : absolute;
     right : 20px;

@@ -9,6 +9,7 @@ import {UserContext} from "./Context/UserContext";
 import {initialState, userReducer} from "./reducers/userReducer";
 import Currency from "./Components/Crrency/Currency";
 import Profile from "./Components/Profile/Profile";
+import Popover from "./Popover/Popover";
 
 const Routing = ({state, dispatch}) =>{
   let history = useHistory();
@@ -31,6 +32,9 @@ const Routing = ({state, dispatch}) =>{
     <Route path="/login">
       <Login />
     </Route>
+    <Route path="/profile">
+      <Profile />
+    </Route>
     <Route path="/">
       <Home />
     </Route>
@@ -48,6 +52,7 @@ function App() {
         <Routing state={state} dispatch={dispatch} />
         {/* <Currency /> */}
         {/* <Profile /> */}
+        {/* <Popover /> */}
       </Router>
     </div>
     </UserContext.Provider>

@@ -64,6 +64,29 @@
     cursor : pointer;
 }
 
+.posts-user-action .like{
+    border-radius : 100px;
+    font-size : 25px;
+    cursor : pointer;
+    color : red;
+    animation: zoom 0.5s ease-in-out;
+}
+
+@keyframes zoom {
+    0%{
+        transform : scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fa-heart-o{
+    border-radius : 100px;
+    font-size : 25px;
+    cursor : pointer;
+}
+
 .posts-action .posts-user-action{
     display : flex;
     align-items : center;
@@ -83,6 +106,16 @@
     padding : 10px;
     color : #636363;
     cursor : pointer;
+}
+
+.posts-caption{
+    display : flex;
+    font-size : 15px;
+    font-weight : 600;
+    padding : 10px;
+    color : #000000;
+    cursor : pointer;
+    width : 100%;
 }
 
 .posts-comment-area{

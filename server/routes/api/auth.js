@@ -49,7 +49,7 @@ router.post("/", async(req, res) =>{
 
         const token = await jwt.sign(payload, "Yash Agarwal", { expiresIn: 3600000 });
 
-        res.status(200).json({token, success : true});
+        res.status(200).json({token, success : true, id : user.id});
     }catch(err){
         console.log(err.message);
         res.status(400).send("Server Error");

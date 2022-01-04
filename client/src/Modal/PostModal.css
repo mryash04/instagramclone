@@ -1,6 +1,72 @@
 .postmodal-data{
     width : 500px;
     height : 500px;
+    overflow-y: hidden;
+}
+
+.next-modal{
+    width : 850px;
+    height : 500px;
+    overflow-y : hidden;
+    transition : linear 0.5s;
+}
+
+.postmodal-details-data{
+    display : flex;
+}
+
+.postmodal-details{
+    display : flex;
+    flex-direction : column;
+    gap : 5px;
+    width : 100%;
+}
+
+.postmodal-details-area{
+    display : flex;
+    align-items : center;
+    gap : 5px;
+    margin-top : -15px;
+}
+
+.postmodal-details-area img{
+    width : 40px;
+    height : 40px;
+    border-radius : 100px;
+}
+
+.postmodal-details-text span{
+    font-size : 15px;
+    font-weight : bold;
+}
+
+.postmodal-details input{
+    border : none;
+    outline : none;
+    padding-left : 25px;
+    margin-top : -10px;
+}
+
+.postmodal-action-area{
+    display : flex;
+    flex-direction : column;
+    margin-top : 100px;
+    border-bottom : 1px solid #808080;
+    border-top : 1px solid #808080;
+}
+
+.postmodal-action-area-details{
+    display : flex;
+    justify-content : space-between;
+    align-items : center;
+    padding : 10px;
+    width : 100%;
+}
+
+.postmodal-action-area-details span{
+    font-size : 15px;
+    /* font-weight: bold; */
+    cursor : pointer;
 }
 
 .postmodal-title span{

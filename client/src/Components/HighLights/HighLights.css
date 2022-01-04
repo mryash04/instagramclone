@@ -1,0 +1,24 @@
+.highlights{
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    gap : 50px;
+    margin : 50px;
+    padding-right : 130px;
+}
+
+.highlights .highlights-story{
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    gap : 10px;
+}
+
+.highlights-story img{
+    width : 80px;
+    height : 80px;
+    border-radius : 100px;
+    border : 2px solid #808080;
+    padding : 2px;
+    cursor : pointer;
+}

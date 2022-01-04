@@ -1,0 +1,43 @@
+.popover{
+    background-color : #ffffff;
+    width : 220px;
+    height : auto;
+    margin : 10px;
+    border-radius : 5px;
+    position : absolute;
+    top : 50px;
+    right : 190px;
+}
+
+.popover-data{
+    display : flex;
+    flex-direction : column;
+    gap : 20px;
+    padding : 15px;
+    cursor : pointer;
+}
+
+.popover-data .popover-info{
+    display : flex;
+    align-items : center;
+    gap : 10px;
+}
+
+.popover-info span{
+    font-size : 13px;
+}
+
+/* .popover-info:hover{
+    background-color : #fafafa;
+    width : 100%;
+} */
+
+.popover-logout{
+    display : flex;
+    padding : 10px 15px;
+}
+
+.popover-logout span{
+    font-size : 14px;
+    cursor : pointer;
+}
