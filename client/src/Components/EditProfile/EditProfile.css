@@ -1,0 +1,96 @@
+.edit-profile{
+    display : flex;
+    justify-content : center;
+    margin : 30px 100px;
+}
+
+.edit-profile-data{
+    display : flex;
+    flex-direction : column;
+}
+
+.edit-profile-user{
+    display : flex;
+    align-items : center;
+    gap : 20px;
+}
+
+.edit-profile-user img{
+    width : 30px;
+    height : 30px;
+    border-radius : 100px;
+}
+
+.edit-profile-user-name{
+    display : flex;
+    flex-direction : column;
+    gap : 2px;
+    padding-left : 13px;
+}
+
+.edit-profile-user-name span{
+    font-size : 14px;
+    font-weight : bold;
+}
+
+.edit-profile-user-name a{
+    color : #4d96f6;
+    font-size : 13px;
+}
+
+.edit-profile-user-info{
+    display : flex;
+    gap : 20px;
+    padding-top : 20px;
+}
+
+.edit-profile-user-info label{
+    font-weight : 500;
+    font-size : 15px;
+}
+
+.edit-profile-user-details{
+    display : flex;
+    flex-direction: column;
+    gap : 10px;
+}
+
+.edit-profile-user-info input{
+    width : 300px;
+    padding : 6px;
+    border : none;
+    border : 1px solid #dbdbdb;
+    border-radius : 2px;
+}
+
+.edit-profile-user-message{
+    font-size : 11px;
+    color : #808080;
+}
+
+.edit-profile-user-details span button{
+    border : none;
+    outline : none;
+    padding : 7px;
+    font-size : 13px;
+    background-color : #4d96f6;
+    color : #ffffff;
+    border-radius : 5px;
+    font-weight : bold;
+    cursor : pointer;
+}
+
+.edit-profile-btn{
+    border : none;
+    outline : none;
+    padding : 7px;
+    font-size : 13px;
+    background-color : #4d96f6;
+    color : #ffffff;
+    border-radius : 5px;
+    font-weight : bold;
+    cursor : pointer;
+    margin-top : 20px;
+    margin-left : 70px;
+    opacity : 0.5;
+}

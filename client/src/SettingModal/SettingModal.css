@@ -1,0 +1,38 @@
+.setting-modal{
+    display : flex;
+    justify-content : center;
+    align-items : center;
+}
+
+.setting-modal-data{
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    width : 350px;
+    overflow : hidden;
+}
+
+.setting-modal-data ul{
+    display : flex;
+    flex-direction : column;
+    margin : 0;
+    padding : 0;
+}
+
+.setting-modal-details li{
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    padding : 10px;
+}
+
+.setting-modal-details li button{
+    all : unset;
+    font-size : 14px;
+    cursor : pointer;
+    text-align : center;
+}
+
+.hr{
+    width : 350px;
+}

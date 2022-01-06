@@ -54,7 +54,7 @@ const Login = () => {
         console.log("This is new state", state)
 
     return (
-        <div classNameName="signup">
+        <div className="signup">
               <span className="root">
     <section className="section-all">
       <main className="main" role="main">

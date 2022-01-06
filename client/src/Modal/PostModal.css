@@ -25,8 +25,8 @@
 .postmodal-details-area{
     display : flex;
     align-items : center;
-    gap : 5px;
-    margin-top : -15px;
+    gap : 10px;
+    padding : 15px;
 }
 
 .postmodal-details-area img{
@@ -43,8 +43,7 @@
 .postmodal-details input{
     border : none;
     outline : none;
-    padding-left : 25px;
-    margin-top : -10px;
+    padding-left : 20px;
 }
 
 .postmodal-action-area{

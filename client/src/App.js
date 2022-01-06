@@ -10,6 +10,7 @@ import {initialState, userReducer} from "./reducers/userReducer";
 import Currency from "./Components/Crrency/Currency";
 import Profile from "./Components/Profile/Profile";
 import Popover from "./Popover/Popover";
+import SettingActions from "./Components/SettingActions/SettingActions";
 
 const Routing = ({state, dispatch}) =>{
   let history = useHistory();
@@ -26,16 +27,19 @@ const Routing = ({state, dispatch}) =>{
   }, [])
   return(
     <Switch>
-    <Route path="/signup">
+    <Route exact path="/signup">
       <Signup />
     </Route>
-    <Route path="/login">
+    <Route exact path="/login">
       <Login />
     </Route>
-    <Route path="/profile">
+    <Route exact path="/profile">
       <Profile />
     </Route>
-    <Route path="/">
+    <Route exact path="/setting">
+      <SettingActions />
+    </Route>
+    <Route exact path="/">
       <Home />
     </Route>
   </Switch>

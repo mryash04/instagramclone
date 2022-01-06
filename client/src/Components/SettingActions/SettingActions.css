@@ -1,0 +1,74 @@
+.setting-actions{
+    display : flex;
+    /* justify-content : center;
+    align-items : center; */
+    background-color : #ffffff;
+    border : 1px solid #dbdbdb;
+    width : 800px;
+    margin : 30px auto;
+}
+
+.setting-actions-right{
+    display : flex;
+    flex-direction : column;
+    gap : 20px;
+    flex : 1;
+    padding : 5px 25px;
+    border : 1px solid #dbdbdb;
+}
+
+.setting-actions-right .setting-actions-right-info{
+    display : flex;
+    align-items : center;
+    padding-top : 10px;
+}
+
+.setting-actions-right-info a{
+    all : unset;
+    font-size : 15px;
+    cursor : pointer;
+}
+
+/* .setting-actions-hr{
+    width : 150px;
+} */
+
+.setting-actions-center{
+    display : flex;
+    flex-direction : column;
+    gap : 10px;
+    margin-top : 10px;
+}
+
+.setting-actions-center-info{
+    display : flex;
+    align-items : center;
+    gap : 2px;
+}
+
+.setting-actions-center-info img{
+    width : 20px;
+    height : 20px;
+}
+
+.setting-actions-center-info span{
+    padding-bottom : 2px;
+    font-weight : bold;
+}
+
+.account-center{
+    all : unset;
+    color : #4d96f6;
+    font-weight : bold;
+}
+
+.account-details{
+    color : #8e8e9d;
+    font-size : 10px;
+}
+
+.setting-actions-left{
+    display : flex;
+    flex : 4;
+    justify-content : center;
+}
