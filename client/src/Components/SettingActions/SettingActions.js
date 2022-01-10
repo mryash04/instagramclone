@@ -3,14 +3,17 @@ import "./SettingActions.css";
 import Meta from "../../assets/meta.png";
 import EditProfile from "../EditProfile/EditProfile";
 import ManageContacts from "../ManageContacts/ManageContacts";
-import {Switch, Router, Route, Link, useRouteMatch, useParams} from "react-router-dom";
+import {Switch, Router, Route, Link, useRouteMatch, useParams, useLocation} from "react-router-dom";
+import ChangePassword from "../ChangePassword/ChangePassword";
+import EmailSms from "../EmailSms/EmailSms";
+import ComingSoon from "../ComingSoon/ComingSoon";
 
 const SettingActions = () => {
 
     const {path, url} = useRouteMatch();
 
-    console.log("This is path", path);
-    console.log("This is url", url);
+    console.log("This is path", path);  
+    console.log("This is url", url); 
 
     const route = `${url}/editprofile`;
 
@@ -23,31 +26,31 @@ const SettingActions = () => {
                     <Link to={`${url}/editprofile`}>Edit Profile</Link>
                 </div>
                 <div className="setting-actions-right-info">
-                    <a>Change Password</a>
+                    <Link to={`${url}/changepassword`}>Change Password</Link>
                 </div>
                 <div className="setting-actions-right-info">
-                    <a>Apps and Websites</a>
+                    <Link to={`${url}/comingsoon`}>Apps and Websites</Link>
                 </div>
                 <div className="setting-actions-right-info">
-                    <a>Email and SMS</a>
+                    <Link to={`${url}/emailsms`}>Email and SMS</Link>
                 </div>
                 <div className="setting-actions-right-info">
-                    <a>Push Notifications</a>
+                    <Link to={`${url}/comingsoon`}>Push Notifications</Link>
                 </div>
                 <div className="setting-actions-right-info">
                     <Link to={`${url}/managecontacts`}>Manage Contacts</Link>
                 </div>
                 <div className="setting-actions-right-info">
-                    <a>Privacy and Security</a>
+                    <Link to={`${url}/comingsoon`}>Privacy and Security</Link>
                 </div>
                 <div className="setting-actions-right-info">
-                    <a>Login Activity</a>
+                    <Link to={`${url}/comingsoon`}>Login Activity</Link>
                 </div>
                 <div className="setting-actions-right-info">
-                    <a>Emails from Instagram</a>
+                    <Link to={`${url}/comingsoon`}>Emails from Instagram</Link>
                 </div>
                 <div className="setting-actions-right-info">
-                    <a>Help</a>
+                    <Link to={`${url}/comingsoon`}>Help</Link>
                 </div>
                 {/* <hr className="setting-actions-hr" /> */}
                 <div className="setting-actions-center">
@@ -61,43 +64,25 @@ const SettingActions = () => {
             </div>
             <div className="setting-actions-left">
                 <Switch>
-                    <Route exact={true} path={`${path}/:settingActionId`}>
-                        <Topic />
-                    </Route>
-                </Switch>
+                <Route path={`${path}/editprofile`}>
+                  <EditProfile />
+                </Route>
+                <Route path={`${path}/changepassword`}>
+                  <ChangePassword />
+                </Route>
+                <Route path={`${path}/managecontacts`}>
+                    <ManageContacts />
+                </Route>
+                <Route path={`${path}/emailsms`}>
+                  <EmailSms />
+                </Route>
+                <Route path={`${path}/comingsoon`}>
+                  <ComingSoon />
+                </Route>
+              </Switch>
             </div>
         </div>
     )
-}
-
-function Topic() {
-    // The <Route> that rendered this component has a
-    // path of `/topics/:topicId`. The `:topicId` portion
-    // of the URL indicates a placeholder that we can
-    // get from `useParams()`.
-
-    const {path, url} = useRouteMatch();
-
-    console.log("This is topic path", path);
-
-    console.log("This is topic url", url);
-
-    const { settingActionId } = useParams();
-
-    console.log("This is setting action id", settingActionId);
-  
-    return (
-      <div>
-          <Switch>
-              <Route exact={true} path={url}>
-                  <EditProfile />
-              </Route>
-              <Route exact={true} path={url}>
-                  <ManageContacts />
-              </Route>
-          </Switch>
-      </div>
-    );
 }
 
 export default SettingActions

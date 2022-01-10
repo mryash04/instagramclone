@@ -52,7 +52,7 @@ const SettingModal = ({modalIsOpen, setIsOpen}) => {
           <div className="setting-modal-data">
               <ul className="setting-modal-details">
                   <li>
-                      <Link to="/setting">
+                      <Link to="/setting/changepassword">
                           <button>Change Password</button>
                       </Link>
                   </li> <hr className="hr" />

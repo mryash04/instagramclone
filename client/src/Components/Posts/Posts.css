@@ -118,6 +118,16 @@
     width : 100%;
 }
 
+.show-comments-area{
+    display : flex;
+    flex-direction: column;
+    font-size : 15px;
+    padding : 0 10px 10px 10px;
+    color : #000000;
+    cursor : pointer;
+    width : 100%;
+}
+
 .posts-comment-area{
     display : flex;
     justify-content : space-between;

@@ -36,7 +36,7 @@ const Routing = ({state, dispatch}) =>{
     <Route exact path="/profile">
       <Profile />
     </Route>
-    <Route exact path="/setting">
+    <Route path="/setting">
       <SettingActions />
     </Route>
     <Route exact path="/">

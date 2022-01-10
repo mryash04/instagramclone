@@ -16,6 +16,8 @@ const PostData = () => {
 
     console.log("This is show", show);
 
+    const array = [1, 2, 3, 4, 5, 7, 6];
+
     const getAllPost = async() =>{
         try{
             const response = await fetch(`${API_URL}/post/allpost`);

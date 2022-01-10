@@ -1,0 +1,41 @@
+.email-sms{
+    display : flex;
+    flex-direction : column;
+    /* justify-content : center; */
+    margin : 30px 60px;
+}
+
+.email-sms-title span{
+    font-size : 20px;
+    font-weight : 500;
+    opacity : 0.9;
+}
+
+.email-sms-data{
+    display : flex;
+    flex-direction : column;
+    gap : 10px;
+}
+
+.email-sms-data-details{
+    display : flex;
+    flex-direction : column;
+    padding-top : 20px;
+}
+
+.email-sms-user-data{
+    display : flex;
+    gap : 2px;
+    align-items : center;
+}
+
+.email-sms-data-details label{
+    font-size : 13px;
+    font-weight : 500;
+    padding-bottom : 2px;
+}
+
+.email-sms-text span{
+    font-size : 13px;
+    color : #808080;
+}

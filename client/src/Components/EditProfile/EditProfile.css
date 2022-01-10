@@ -25,7 +25,7 @@
     display : flex;
     flex-direction : column;
     gap : 2px;
-    padding-left : 13px;
+    padding-left : 50px;
 }
 
 .edit-profile-user-name span{
@@ -40,19 +40,21 @@
 
 .edit-profile-user-info{
     display : flex;
-    gap : 20px;
+    /* gap : 20px; */
     padding-top : 20px;
 }
 
 .edit-profile-user-info label{
     font-weight : 500;
     font-size : 15px;
+    width : 100px;
 }
 
 .edit-profile-user-details{
     display : flex;
     flex-direction: column;
     gap : 10px;
+    width : 400px;
 }
 
 .edit-profile-user-info input{
@@ -91,6 +93,6 @@
     font-weight : bold;
     cursor : pointer;
     margin-top : 20px;
-    margin-left : 70px;
+    margin-left : 100px;
     opacity : 0.5;
 }

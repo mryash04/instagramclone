@@ -6,13 +6,20 @@ import Send from "../../assets/send.png";
 import Save from "../../assets/save.png";
 import { API_URL } from '../../helper';
 
-const PostCard = ({value, }) => { 
+const PostCard = ({value,}) => { 
     
     const user = localStorage.getItem("user");
     const[show, setShow] = useState({likeStatus:value.likes.includes(user.toString()),id:value._id});
     const[likes, setLikes] = useState(value.likes.length);
 
+    const[comments, setComments] = useState("");
+    const[userComments, setUserComments] = useState(value.comments);
+
     console.log("This is like", likes);
+
+    console.log("This is comments", comments);
+
+    console.log("This is user comments", userComments);
     
     console.log(show);
     
@@ -35,11 +42,28 @@ const PostCard = ({value, }) => {
     }
 };
 
-
 const postDisLike = async(id) =>{
     setShow(false);
     console.log("This is dislike", id);
 }
+
+const postComments = async(id) =>{
+    console.log("This is post comment id", id);
+    const response = await fetch(`${API_URL}/post/comments/${id}`, {
+        method : "PUT",
+        headers : {
+            "Content-Type" : "application/json",
+            "x-auth-token" : localStorage.getItem("jwt")
+        },
+        body : JSON.stringify({
+            comments : comments
+        })
+    });
+    const result = await response.json();
+    console.log("This is result", result.comment.comments);
+    // setUserComments(result.comment.comments);
+}
+
     return (
         <React.Fragment>
         <div className="posts-info">
@@ -66,14 +90,19 @@ const postDisLike = async(id) =>{
             </div>
         </div>
         <span className="posts-likes">{likes} likes</span> <br />
-        <span className="posts-caption">{value.caption}</span> <hr />
+        <span className="posts-caption">{value.caption}</span>
+        <div className="show-comments-area">{console.log(userComments)}
+            {userComments.slice(-2).map((value) => {
+                return <span>{value.text}</span>
+            })}
+        </div> <hr />
         <div className="posts-comment-area">
             <div className="posts-user-comment">
                 <span><i className="fa fa-smile-o"></i></span>
-                <input type="text" placeholder="Add a comment..." />
+                <input onChange={(event) => setComments(event.target.value)} type="text" placeholder="Add a comment..." />
             </div>
             <div className="posts-user-btn">
-                <button>Post</button>
+                <button onClick={() => postComments(value._id)}>Post</button>
             </div>
         </div>
         </React.Fragment>
