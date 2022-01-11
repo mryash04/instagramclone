@@ -64,6 +64,23 @@ const postComments = async(id) =>{
     // setUserComments(result.comment.comments);
 }
 
+const deletePost = async(id) =>{
+    console.log("Post deleted", id);
+    try{
+        const response = await fetch(`${API_URL}/post/post/${id}`, {
+            method : "DELETE",
+            headers : {
+                "Content-Type" : "application/json",
+                "x-auth-token" : localStorage.getItem("jwt")
+            }
+        });
+        const result = await response.json();
+        console.log("This is result", result);
+    }catch(error){
+        console.log(error.message)
+    }
+}
+
     return (
         <React.Fragment>
         <div className="posts-info">
@@ -72,7 +89,8 @@ const postComments = async(id) =>{
                 <span>{value.postedBy.name}</span>
             </div>
             <div className="posts-options">
-                ...
+                {/* ... */}
+                <span onClick={() => deletePost(value._id)}><i className="fa fa-trash-o"></i></span>
             </div>
         </div> <hr />
         <div className="posts-user-image">

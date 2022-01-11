@@ -137,15 +137,23 @@ router.put("/comments/:id", auth, async (req, res) => {
 });
 
 // delete single post by id
-router.delete("/post/:id", async (req, res) => {
+router.delete("/post/:id", auth, async (req, res) => {
   try {
     const id = req.params.id;
-    console.log("This is id", id);
-    let post = await Post.findByIdAndDelete(id);
+    let post = await Post.findById(id);
 
-    res
+    console.log(typeof(post.postedBy.toString()));
+    console.log(typeof(req.user.user.id));
+
+    if(post.postedBy.toString() === req.user.user.id.toString()){
+      console.log("This is deleted");
+      await Post.findByIdAndDelete(id);
+      res
       .status(200)
       .json({ success: true, message: "deleted SuccessFully", post });
+    }else{
+      res.status(400).json({message : "You are not authorized to delete this post"})
+    }
   } catch (err) {
     console.log(err.mesaage);
     res.status(400).send("Server Error");
