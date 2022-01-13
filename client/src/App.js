@@ -11,6 +11,7 @@ import Currency from "./Components/Crrency/Currency";
 import Profile from "./Components/Profile/Profile";
 import Popover from "./Popover/Popover";
 import SettingActions from "./Components/SettingActions/SettingActions";
+import UserProfiles from "./Components/UserProfiles/UserProfiles";
 
 const Routing = ({state, dispatch}) =>{
   let history = useHistory();
@@ -38,6 +39,9 @@ const Routing = ({state, dispatch}) =>{
     </Route>
     <Route path="/setting">
       <SettingActions />
+    </Route>
+    <Route path="/userprofiles/:id">
+      <UserProfiles />
     </Route>
     <Route exact path="/">
       <Home />

@@ -5,8 +5,11 @@ import Comment from "../../assets/chat.png";
 import Send from "../../assets/send.png";
 import Save from "../../assets/save.png";
 import { API_URL } from '../../helper';
+import {Link, useParams} from "react-router-dom";
 
-const PostCard = ({value,}) => { 
+const PostCard = ({value,}) => {
+
+    console.log("This is a value", value);
     
     const user = localStorage.getItem("user");
     const[show, setShow] = useState({likeStatus:value.likes.includes(user.toString()),id:value._id});
@@ -86,7 +89,9 @@ const deletePost = async(id) =>{
         <div className="posts-info">
             <div className="posts-user-info">
                 <img src={value.image} alt="profile" />
-                <span>{value.postedBy.name}</span>
+                <Link to={`/userprofiles/${value.postedBy._id}`} style={{all : "unset", display : "flex", alignItems : "center"}}>
+                    <span>{value.postedBy.name}</span>
+                </Link>
             </div>
             <div className="posts-options">
                 {/* ... */}

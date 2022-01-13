@@ -5,6 +5,8 @@
     gap : 50px;
     margin : 50px;
     padding-right : 130px;
+    overflow-x : hidden;
+    max-width : 800px;
 }
 
 .highlights .highlights-story{
